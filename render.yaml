@@ -1,0 +1,10 @@
+# Render Blueprint: deploys the API from the Dockerfile on every push to main.
+# The image builds bronze -> silver -> gold and trains the models at build time.
+services:
+  - type: web
+    name: dc-load-forecasting
+    runtime: docker
+    plan: free
+    branch: main
+    autoDeploy: true
+    healthCheckPath: /health
