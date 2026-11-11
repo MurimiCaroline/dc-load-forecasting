@@ -20,5 +20,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-This licence covers the source code in this repository. The dataset is the work
-of its authors and is not distributed here; see the README for its source.
+This licence covers the source code in this repository. The dataset in data/raw/
+is the work of its authors (Bohluli Oskouei, Eftekharnejad and Mohan, IEEE DataPort,
+https://doi.org/10.21227/9hb2-de87) and is redistributed under CC BY 4.0.

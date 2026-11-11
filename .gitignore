@@ -17,12 +17,10 @@ models/*.txt
 models/metadata.json
 reports/*.parquet
 
-# Raw data and the dataset authors' documentation belong to the authors:
-# download them from IEEE DataPort (see README). Remove these lines only if
-# the dataset licence allows redistribution.
-data/raw/*.csv
-docs/*.pdf
+# The raw dataset in data/raw/ is committed (CC BY 4.0, see README).
+# Any other CSV or PDF is a local working file.
 *.csv
+!data/raw/3-Month Data Center Load Profiles.csv
 *.pdf
 
 # Original working files from before the pipeline was built

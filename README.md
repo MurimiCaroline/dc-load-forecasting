@@ -332,8 +332,7 @@ Bad requests get clear errors:
 
 ### Requirements
 
-- Python 3.10 or newer
-- The dataset CSV (see [Data source](#16-data-source))
+- Python 3.10 or newer (the dataset is included in `data/raw/`)
 
 ### Steps
 
@@ -350,16 +349,14 @@ python -m venv .venv
 # 3. Install the project and its dev tools
 pip install -e ".[dev]"
 
-# 4. Place "3-Month Data Center Load Profiles.csv" in data/raw/
-
-# 5. Build every layer and train (about 5 seconds)
+# 4. Build every layer and train (about 5 seconds)
 python -m dcforecast.pipeline
 
-# 6. Optional: run the tests and regenerate the figures
+# 5. Optional: run the tests and regenerate the figures
 pytest
 python -m dcforecast.report
 
-# 7. Start the API, then open http://127.0.0.1:8000/docs
+# 6. Start the API, then open http://127.0.0.1:8000/docs
 uvicorn dcforecast.api.main:app --reload
 ```
 
@@ -378,6 +375,10 @@ docker run -p 8000:8000 dc-load-forecasting
 
 The image builds every layer and trains the models during the build, then serves the API on port 8000. The port can be overridden with the `PORT` environment variable, which hosts such as Render expect.
 
+### Deploy to Render
+
+`render.yaml` defines the service. In Render, choose **New → Blueprint**, select this repository and deploy. Render builds the Dockerfile, which runs the pipeline and trains the models during the build, then redeploys on every push to `main`.
+
 ---
 
 ## 11. Project structure
@@ -385,7 +386,7 @@ The image builds every layer and trains the models during the build, then serves
 ```
 dc-load-forecasting/
 ├── data/
-│   ├── raw/            source CSV (not committed; see Data source)
+│   ├── raw/            source CSV (CC BY 4.0, see Data source)
 │   ├── bronze/         raw copy + lineage            ┐
 │   ├── silver/         validated tables + DQ report  ├ rebuilt by the pipeline
 │   └── gold/           features, KPIs, site table    ┘
@@ -422,7 +423,7 @@ dc-load-forecasting/
 pytest     # 19 tests, about 2 seconds
 ```
 
-On GitHub, the tests run automatically on every push. The raw dataset isn't in the repository, so there the API tests are skipped and the data validation and leakage tests run. Locally, with the CSV in `data/raw/`, all 19 run.
+On GitHub, all 19 tests run automatically on every push.
 
 | File | What it proves |
 |---|---|
@@ -482,16 +483,16 @@ On GitHub, the tests run automatically on every push. The raw dataset isn't in t
 
 ## 16. Data source
 
-Bohluli Oskouei, A., Eftekharnejad, S., and Mohan, C. K. (2026). *A Three-Month Weather-Aware Data Center Power Load Profile Dataset.* IEEE DataPort.
+Bohluli Oskouei, A., Eftekharnejad, S., and Mohan, C. K. (2026). *Three-Month Weather-Integrated Data Center Power Load Hourly Dataset.* IEEE DataPort. https://doi.org/10.21227/9hb2-de87
 [Dataset page](https://ieee-dataport.org/documents/three-month-weather-integrated-data-center-power-load-hourly-dataset)
 
 The dataset covers 13,248 hourly records: 6 synthetic data centre sites in a Syracuse, NY weather context, from 1 May to 31 July 2018, with 22 columns. The authors' documentation is on the dataset page.
 
-The raw CSV isn't committed to this repository. Download it from the dataset page and place it in `data/raw/`.
+The dataset is licensed under [Creative Commons Attribution 4.0 (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). The original CSV is included unchanged in `data/raw/`. Every table in `data/bronze/`, `data/silver/` and `data/gold/` is derived from it by this project's pipeline.
 
 ## License
 
-The code is released under the [MIT License](LICENSE). The dataset belongs to its authors and isn't redistributed here.
+The code is released under the [MIT License](LICENSE). The dataset belongs to its authors and is redistributed under CC BY 4.0 (see [Data source](#16-data-source)).
 
 ---
 
