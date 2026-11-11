@@ -1,0 +1,172 @@
+{
+  "P_total_MW": {
+    "model": {
+      "MAE": 3.1668943683063477,
+      "RMSE": 4.0831135498443825,
+      "MAPE_pct": 5.064827897555924,
+      "bias": 1.1380996618601378,
+      "n": 2304
+    },
+    "baseline_lag24": {
+      "MAE": 3.6223085249901192,
+      "RMSE": 4.679509370398409,
+      "MAPE_pct": 5.624118446096285,
+      "bias": 0.1690143743972597,
+      "n": 2304
+    },
+    "baseline_lag168": {
+      "MAE": 4.162586464899762,
+      "RMSE": 5.422632089857901,
+      "MAPE_pct": 6.645617549147287,
+      "bias": 0.9133422782494639,
+      "n": 2304
+    },
+    "skill_vs_lag24_pct": 12.57248391576512,
+    "interval": {
+      "nominal_coverage": 0.8,
+      "half_width": 5.1232608467568586,
+      "test_coverage": 0.7947048611111112
+    },
+    "per_site": {
+      "SITE_001": {
+        "model_MAE": 3.7078762891655033,
+        "model_MAPE_pct": 4.860389977190222,
+        "lag24_MAE": 4.379722341976842
+      },
+      "SITE_002": {
+        "model_MAE": 2.2294515356895386,
+        "model_MAPE_pct": 3.766624855016345,
+        "lag24_MAE": 2.7909709120953647
+      },
+      "SITE_003": {
+        "model_MAE": 2.043668250994829,
+        "model_MAPE_pct": 5.645372886294715,
+        "lag24_MAE": 2.123317139135127
+      },
+      "SITE_004": {
+        "model_MAE": 3.443437134085165,
+        "model_MAPE_pct": 3.647831472674581,
+        "lag24_MAE": 3.996014727669715
+      },
+      "SITE_005": {
+        "model_MAE": 4.700089356269644,
+        "model_MAPE_pct": 7.239187014599653,
+        "lag24_MAE": 5.417866563054393
+      },
+      "SITE_006": {
+        "model_MAE": 2.876843643633407,
+        "model_MAPE_pct": 5.229561179560021,
+        "lag24_MAE": 3.0259594660092737
+      }
+    },
+    "ablation_with_regime_MAE": 3.1954249486386255,
+    "feature_importance_gain": {
+      "P_total_MW_lag24": 0.4575,
+      "P_total_MW_lag48": 0.2243,
+      "site_id": 0.1627,
+      "P_total_MW_lag168": 0.1064,
+      "P_total_MW_prevday_last": 0.0266,
+      "temp_C": 0.0043,
+      "P_total_MW_prevday_mean": 0.0042,
+      "P_total_MW_prevday_max": 0.0037,
+      "hour": 0.0031,
+      "dewpoint_C": 0.0016,
+      "day_of_week": 0.0015,
+      "dow_sin": 0.0013,
+      "site_class": 0.001,
+      "hour_cos": 0.0005,
+      "cooling_degree_hours": 0.0003,
+      "rh_pct": 0.0003,
+      "dow_cos": 0.0003,
+      "is_weekend": 0.0002,
+      "heatwave_intensity": 0.0001,
+      "hour_sin": 0.0001,
+      "heatwave_flag": 0.0
+    }
+  },
+  "PUE": {
+    "model": {
+      "MAE": 0.022353565849585384,
+      "RMSE": 0.03244954984665502,
+      "MAPE_pct": 1.6317418458498212,
+      "bias": 0.003585344305338379,
+      "n": 2304
+    },
+    "baseline_lag24": {
+      "MAE": 0.037796690266247546,
+      "RMSE": 0.053086135902203416,
+      "MAPE_pct": 2.7496132698564817,
+      "bias": 0.003200679414567768,
+      "n": 2304
+    },
+    "baseline_lag168": {
+      "MAE": 0.03370041871240132,
+      "RMSE": 0.05152895942124021,
+      "MAPE_pct": 2.4548408211028563,
+      "bias": 0.005931779073028972,
+      "n": 2304
+    },
+    "skill_vs_lag24_pct": 40.85840402394406,
+    "interval": {
+      "nominal_coverage": 0.8,
+      "half_width": 0.040636866471099035,
+      "test_coverage": 0.8428819444444444
+    },
+    "per_site": {
+      "SITE_001": {
+        "model_MAE": 0.025428801479133695,
+        "model_MAPE_pct": 1.8449664892413404,
+        "lag24_MAE": 0.03417798560709983
+      },
+      "SITE_002": {
+        "model_MAE": 0.026176579595686273,
+        "model_MAPE_pct": 1.7858773395652197,
+        "lag24_MAE": 0.03913784551890723
+      },
+      "SITE_003": {
+        "model_MAE": 0.013387968686513254,
+        "model_MAPE_pct": 1.0917440799362508,
+        "lag24_MAE": 0.02501298174994673
+      },
+      "SITE_004": {
+        "model_MAE": 0.01004618260893519,
+        "model_MAPE_pct": 0.7390211833501927,
+        "lag24_MAE": 0.02397365800142413
+      },
+      "SITE_005": {
+        "model_MAE": 0.044887675036311546,
+        "model_MAPE_pct": 3.341396502243562,
+        "lag24_MAE": 0.07202544081751822
+      },
+      "SITE_006": {
+        "model_MAE": 0.014194187690932345,
+        "model_MAPE_pct": 0.9874454807623609,
+        "lag24_MAE": 0.03245222990258917
+      }
+    },
+    "ablation_with_regime_MAE": 0.02208122026825883,
+    "feature_importance_gain": {
+      "PUE_prevday_last": 0.5759,
+      "site_id": 0.0905,
+      "PUE_prevday_max": 0.0818,
+      "PUE_prevday_mean": 0.057,
+      "temp_C": 0.0439,
+      "day_of_week": 0.0321,
+      "site_class": 0.0231,
+      "PUE_lag168": 0.0195,
+      "hour": 0.0138,
+      "PUE_lag24": 0.0123,
+      "dewpoint_C": 0.0108,
+      "dow_sin": 0.0092,
+      "PUE_lag48": 0.0085,
+      "is_weekend": 0.0066,
+      "heatwave_intensity": 0.0049,
+      "rh_pct": 0.0033,
+      "hour_sin": 0.0021,
+      "cooling_degree_hours": 0.002,
+      "hour_cos": 0.0014,
+      "dow_cos": 0.0009,
+      "heatwave_flag": 0.0004
+    }
+  }
+}

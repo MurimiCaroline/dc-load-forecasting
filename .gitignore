@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Medallion layers and model artifacts are rebuilt by the pipeline
+data/bronze/
+data/silver/
+data/gold/
+models/*.txt
+models/metadata.json
+reports/*.parquet
+
+# Raw data and the dataset authors' documentation belong to the authors:
+# download them from IEEE DataPort (see README). Remove these lines only if
+# the dataset licence allows redistribution.
+data/raw/*.csv
+docs/*.pdf
+*.csv
+*.pdf
+
+# Original working files from before the pipeline was built
+/dc-load-forecasting.ipynb
+/dc-load-forecasting.md
+/Claude outputs/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini

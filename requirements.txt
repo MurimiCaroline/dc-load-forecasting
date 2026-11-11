@@ -1,0 +1,12 @@
+# Runtime (the package itself is defined in pyproject.toml; prefer: pip install -e ".[dev]")
+pandas>=2.1
+numpy>=1.26
+pyarrow>=14
+lightgbm>=4.1
+fastapi>=0.110
+uvicorn[standard]>=0.27
+pydantic>=2.5
+# Development
+pytest>=8
+httpx>=0.27
+matplotlib>=3.8
